@@ -1,0 +1,6 @@
+aiogram
+environs
+betterlogging
+icecream
+Babel
+async-lru
