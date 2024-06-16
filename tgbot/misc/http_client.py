@@ -124,40 +124,38 @@ class CMCHTTPClient(HTTPClient):
             return None
 
     # @alru_cache
-    async def get_hadiths(self, start_num: int, size: int = 50):
+    async def get_hadiths(self, start_num: int, size: int = 50, q: str | None = None):
         session = await self._get_session()
         try:
             async with asyncio.timeout(10):  # Set a timeout for the request
-                async with session.get(self.base_url + "/hadith/all") as resp:
+                # ic("session")
+                endpoint = "/hadith/all" if q is None else f"/hadith/search/{q}"
+                ic(endpoint)
+                # "http://127.0.0.1:5173/hadith/search/yunusov"
+                async with session.get(self.base_url + endpoint) as resp:
+                    # ic(resp.text)
                     data = await resp.json()
+                    if not data:
+                        return
+                    # ic(data)
                     all_items: list = data.get('hadiths')
+                    # ic(all_items)
                     overall_items_count: int = len(all_items)
+                    ic(overall_items_count)
 
                     # Если результатов больше нет, отправляем пустой список
                     if start_num >= overall_items_count:
+                        ic([])
                         return []
                     # Отправка неполной пачки (последней)
                     elif start_num + size >= overall_items_count:
+                        ic('elif')
                         return all_items[start_num:overall_items_count + 1]
                     else:
+                        ic('else')
                         return all_items[start_num:start_num + size]
-        except asyncio.TimeoutError:
-            print("Request timed out")
-            return None
-
-    # @alru_cache
-    async def search_hadith(self, title: str, start_num: int, size: int = 50):
-        session = await self._get_session()
-        try:
-            async with asyncio.timeout(10):  # Set a timeout for the request
-                async with session.get(f"{self.base_url}/hadith/search",
-                                       params={"title": title, "offset": start_num, "size": size}) as resp:
-                    data = await resp.json()
-                    ic(data)
-                    return data.get('hadiths', [])
-        except asyncio.TimeoutError:
-            print("Request timed out")
-            return None
+        except Exception as e:
+            return {"Error": str(e)}
 
     # @alru_cache
     async def get_current_books(self, skip=0, limit=10):
@@ -170,11 +168,13 @@ class CMCHTTPClient(HTTPClient):
             print("Request timed out")
             return None
 
-    async def get_friends(self, start_num: int, size: int = 50):
+    async def get_friends(self, start_num: int, size: int = 50, q: str | None = None):
         session = await self._get_session()
         try:
             async with asyncio.timeout(10):  # Set a timeout for the request
-                async with session.get(self.base_url + "/user/all") as resp:
+                endpoint = "/user/all" if q is None else f"/user/search/{q}"
+                # "http://127.0.0.1:5173/user/search/yunusov"
+                async with session.get(self.base_url + endpoint) as resp:
                     data = await resp.json()
                     ic(data)
                     ic(start_num)
@@ -194,12 +194,12 @@ class CMCHTTPClient(HTTPClient):
             return None
 
     # @alru_cache
-    async def get_user_read_count(self, chat_id, today=False, week=False):
+    async def get_user_read_count(self, chat_id, today=False, week=False, total=False):
         session = await self._get_session()
         try:
             async with asyncio.timeout(10):  # Set a timeout for the request
                 # ex = "http://localhost:5173/read/user/557407324?today=false&week=false"
-                async with session.get(self.base_url + f"/read/user/{chat_id}?today={today}&week={week}") as resp:
+                async with session.get(self.base_url + f"/read/user/{chat_id}?today={today}&week={week}&total={total}") as resp:
                     data = await resp.json()
                     ic(data)
                     return data.get('read_count')

@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2024-06-12 17:46+0500\n"
-"PO-Revision-Date: 2024-06-11 16:06+0500\n"
+"POT-Creation-Date: 2024-06-16 19:36+0500\n"
+"PO-Revision-Date: 2024-06-16 19:36+0500\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: uz\n"
 "Language-Team: uz <LL@li.org>\n"
@@ -22,69 +22,65 @@ msgstr ""
 msgid "Hello, admin!"
 msgstr "Salom, admin!"
 
-#: tgbot/handlers/back_to_menu.py:12 tgbot/handlers/change_lang.py:40
-#: tgbot/handlers/user.py:23
+#: tgbot/handlers/back_to_menu.py:12 tgbot/handlers/user.py:20
 msgid "Welcome to the main menu!"
 msgstr "Asosiy menyuga xush kelibsiz!"
 
+#: tgbot/handlers/change_lang.py:57
+msgid "The language has been changed successfully"
+msgstr "Til muvaffaqiyatli o'zgartirildi"
+
 #: tgbot/handlers/echo.py:9
 msgid "Echo message"
-msgstr "Yankı xabari"
+msgstr "Echo xabari"
 
-#: tgbot/handlers/hadith.py:41 tgbot/handlers/hadith.py:79
+#: tgbot/handlers/hadith.py:40 tgbot/handlers/hadith.py:78
 msgid "UZBEKCHA"
 msgstr "UZBEKCHA"
 
-#: tgbot/handlers/hadith.py:50
+#: tgbot/handlers/hadith.py:49
 msgid "Don't read hadith too fast!"
-msgstr "Hadisni juda tez o‘qimang!"
+msgstr "Hadislarni juda tez o'qimang!"
 
-#: tgbot/handlers/inline_mode.py:53
+#: tgbot/handlers/inline_mode.py:66
 msgid "Click to share the bot!"
 msgstr "Botni ulashish uchun bosing!"
 
-#: tgbot/handlers/necessary_book.py:30
+#: tgbot/handlers/necessary_book.py:27
 msgid "There are no books uploaded yet"
-msgstr "Hech qanday kitob yuklanmagan"
+msgstr "Hozircha yuklangan kitoblar yo'q"
 
-#: tgbot/handlers/necessary_book.py:56
+#: tgbot/handlers/necessary_book.py:50
 msgid "<em><b>{count} books in total.</b></em>"
-msgstr "<em><b>Jami {count} ta kitob</b></em>"
+msgstr "<em><b>Jami {count} ta kitob.</b></em>"
 
-#: tgbot/handlers/top_stats.py:42
-#, fuzzy
+#: tgbot/handlers/top_stats.py:25
 msgid "<b>🥇 Overall Top Rating:</b>"
-msgstr "🥇 Ummumiy top reyting:"
+msgstr "<b>🥇 Umumiy yuqori reyting:</b>"
 
-#: tgbot/handlers/top_stats.py:43
-#, fuzzy
+#: tgbot/handlers/top_stats.py:26
 msgid "<b>🥈 Weekly Top Rating:</b>"
-msgstr "🥈 Hafta top reyting:"
+msgstr "<b>🥈 Haftalik yuqori reyting:</b>"
 
-#: tgbot/handlers/top_stats.py:44
-#, fuzzy
+#: tgbot/handlers/top_stats.py:27
 msgid "<b>🥉 Daily Top Rating:</b>"
-msgstr "🥉 Kunlik top reyting:"
+msgstr "<b>🥉 Kunlik yuqori reyting:</b>"
 
-#: tgbot/handlers/user_stats.py:18
-#, fuzzy
+#: tgbot/handlers/user_stats.py:21
 msgid "📊 All your statistics:"
-msgstr "📊 Barcha statistikangiz:"
+msgstr "📊 Sizning to'liq statistikangiz:"
 
-#: tgbot/handlers/user_stats.py:19
-#, fuzzy
+#: tgbot/handlers/user_stats.py:23
 msgid "📖 Number of hadiths you have read: <b>{total_read}</b>"
 msgstr "📖 O'qigan hadislaringiz soni: <b>{total_read}</b>"
 
-#: tgbot/handlers/user_stats.py:21
-#, fuzzy
+#: tgbot/handlers/user_stats.py:24
 msgid "📆 You read <b>{today_read}</b> hadiths in one day!"
-msgstr "📆 Siz bir kunda <b>{today_read}</b> hadis o'qigansiz!"
+msgstr "📆 Siz bugun <b>{today_read}</b> ta hadis o'qidingiz!"
 
-#: tgbot/handlers/user_stats.py:22
-#, fuzzy
+#: tgbot/handlers/user_stats.py:25
 msgid "📆 You read <b>{week_read}</b> hadiths per week!"
-msgstr "📆 Siz bir haftada <b>{week_read}</b> hadis o'qigansiz!"
+msgstr "📆 Siz bir haftada <b>{week_read}</b> ta hadis o'qidingiz!"
 
 #: tgbot/keyboards/inline.py:11
 msgid "📖 Hadiths!"
@@ -104,7 +100,7 @@ msgstr "🔎 Hadislarni qidirish!"
 
 #: tgbot/keyboards/inline.py:19
 msgid "🏆 Top rating!"
-msgstr "🏆 Eng yuqori reyting!"
+msgstr "🏆 Yuqori reyting!"
 
 #: tgbot/keyboards/inline.py:20
 msgid "📊 My statistics!"
@@ -132,27 +128,8 @@ msgstr "O'tkazib yuborish ❌"
 
 #: tgbot/keyboards/inline.py:51
 msgid "Read ✅"
-msgstr "O'qidim ✅"
+msgstr "O'qish ✅"
 
 #: tgbot/keyboards/inline.py:54
 msgid "Like ⭐"
 msgstr "Yoqdi ⭐"
-
-#~ msgid "🔋 You have read  <b>{a}% of the total number of hadiths!</b>"
-#~ msgstr "🔋 Siz jami hadislarning <b>{a}%</b> qismini o'qigansiz!"
-
-#~ msgid "🔋 You have read <b>{a}% of the total number of hadiths!</b>"
-#~ msgstr "🔋 Siz jami hadislarning <b>{a}%</b> qismini o'qigansiz!"
-
-#~ msgid "🔋 You"
-#~ msgstr "ha"
-
-#~ msgid "🔋 You have read"
-#~ msgstr "a"
-
-#~ msgid "🔋 You have read <b>{a} of the total number of hadiths!</b>"
-#~ msgstr "a"
-
-#~ msgid "👥 Number of people you have invited: <b>{count_invited}</b>"
-#~ msgstr "👥 Taklif qilgan odamingiz soni: <b>{count_invited}</b>"
-

@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2024-06-16 19:36+0500\n"
-"PO-Revision-Date: 2024-06-16 19:36+0500\n"
+"POT-Creation-Date: 2024-06-16 19:24+0500\n"
+"PO-Revision-Date: 2024-06-11 16:06+0500\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: ru\n"
 "Language-Team: ru <LL@li.org>\n"
@@ -21,15 +21,15 @@ msgstr ""
 
 #: tgbot/handlers/admin.py:14
 msgid "Hello, admin!"
-msgstr "Привет, админ!"
+msgstr "Здравствуйте, администратор!"
 
 #: tgbot/handlers/back_to_menu.py:12 tgbot/handlers/user.py:20
 msgid "Welcome to the main menu!"
 msgstr "Добро пожаловать в главное меню!"
 
-#: tgbot/handlers/change_lang.py:57
+#: tgbot/handlers/change_lang.py:56
 msgid "The language has been changed successfully"
-msgstr "Язык был успешно изменен"
+msgstr "Язык успешно изменен"
 
 #: tgbot/handlers/echo.py:9
 msgid "Echo message"
@@ -37,7 +37,7 @@ msgstr "Сообщение эхо"
 
 #: tgbot/handlers/hadith.py:40 tgbot/handlers/hadith.py:78
 msgid "UZBEKCHA"
-msgstr "УЗБЕКСКИЙ"
+msgstr "RUSCHA"
 
 #: tgbot/handlers/hadith.py:49
 msgid "Don't read hadith too fast!"
@@ -53,33 +53,40 @@ msgstr "Книги еще не загружены"
 
 #: tgbot/handlers/necessary_book.py:50
 msgid "<em><b>{count} books in total.</b></em>"
-msgstr "<em><b>{count} книг всего.</b></em>"
+msgstr "<em><b>Всего {count} книг.</b></em>"
 
 #: tgbot/handlers/top_stats.py:25
+#, fuzzy
 msgid "<b>🥇 Overall Top Rating:</b>"
-msgstr "<b>🥇 Общий топ рейтинг:</b>"
+msgstr "<b>🥇 Общий Топ Рейтинг:</b>"
 
 #: tgbot/handlers/top_stats.py:26
+#, fuzzy
 msgid "<b>🥈 Weekly Top Rating:</b>"
-msgstr "<b>🥈 Еженедельный топ рейтинг:</b>"
+msgstr "<b>🥈 Недельный Топ Рейтинг:</b>"
 
 #: tgbot/handlers/top_stats.py:27
+#, fuzzy
 msgid "<b>🥉 Daily Top Rating:</b>"
-msgstr "<b>🥉 Ежедневный топ рейтинг:</b>"
+msgstr "<b>🥉 Ежедневный Топ Рейтинг:"
 
-#: tgbot/handlers/user_stats.py:21
+#: tgbot/handlers/user_stats.py:17
+#, fuzzy
 msgid "📊 All your statistics:"
 msgstr "📊 Вся ваша статистика:"
 
-#: tgbot/handlers/user_stats.py:23
+#: tgbot/handlers/user_stats.py:18
+#, fuzzy
 msgid "📖 Number of hadiths you have read: <b>{total_read}</b>"
 msgstr "📖 Количество прочитанных хадисов: <b>{total_read}</b>"
 
-#: tgbot/handlers/user_stats.py:24
+#: tgbot/handlers/user_stats.py:19
+#, fuzzy
 msgid "📆 You read <b>{today_read}</b> hadiths in one day!"
-msgstr "📆 Вы прочитали <b>{today_read}</b> хадисов за день!"
+msgstr "📆 Вы прочитали <b>{today_read}</b> хадисов за один день!"
 
-#: tgbot/handlers/user_stats.py:25
+#: tgbot/handlers/user_stats.py:20
+#, fuzzy
 msgid "📆 You read <b>{week_read}</b> hadiths per week!"
 msgstr "📆 Вы прочитали <b>{week_read}</b> хадисов за неделю!"
 
@@ -129,10 +136,27 @@ msgstr "Пропустить ❌"
 
 #: tgbot/keyboards/inline.py:51
 msgid "Read ✅"
-msgstr "Читать ✅"
+msgstr "Прочитал ✅"
 
 #: tgbot/keyboards/inline.py:54
 msgid "Like ⭐"
 msgstr "Нравится ⭐"
 
+#~ msgid "🔋 You have read  <b>{a}% of the total number of hadiths!</b>"
+#~ msgstr "🔋 Вы прочитали <b>{a}% от общего количества хадисов!</b>"
+
+#~ msgid "🔋 You have read <b>{a}% of the total number of hadiths!</b>"
+#~ msgstr "🔋 Вы прочитали <b>{a}% от общего количества хадисов!</b>"
+
+#~ msgid "🔋 You"
+#~ msgstr "ha"
+
+#~ msgid "🔋 You have read"
+#~ msgstr "a"
+
+#~ msgid "🔋 You have read <b>{a} of the total number of hadiths!</b>"
+#~ msgstr "a"
+
+#~ msgid "👥 Number of people you have invited: <b>{count_invited}</b>"
+#~ msgstr "👥 Количество приглашенных вами людей: <b>{count_invited}</b>"
 

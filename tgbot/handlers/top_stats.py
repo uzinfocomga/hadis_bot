@@ -8,23 +8,6 @@ from tgbot.misc.init import cmc_client
 top_stats_router = Router()
 
 
-# @top_stats_router.callback_query(F.data == "top_stats")
-# async def send_top_stats(callback: CallbackQuery):
-#     total_top_users = await cmc_client.get_top_users_stats(top_total=True)
-#     week_top_users = await cmc_client.get_top_users_stats(top_week=True)
-#     today_top_users = await cmc_client.get_top_users_stats(top_today=True)
-#     stats = [
-#         _("🏆 Overall Top Rating:"),
-#         f"{total_top_users} 📖",
-#         _("🏆 Weekly Top Rating:"),
-#         f"{week_top_users} 📖",
-#         _("🏆 Daily Top Rating:"),
-#         f"{today_top_users} 📖",
-#     ]
-#     result = "\n".join(stats)
-#     await callback.message.edit_text(text=result, reply_markup=go_back_keyboard())
-
-
 @top_stats_router.callback_query(F.data == "top_stats")
 async def send_top_stats(callback: CallbackQuery):
     total_top_users = await cmc_client.get_top_users_stats(top_total=True)

@@ -17,15 +17,12 @@ async def handle_current_books(callback: CallbackQuery):
 
 @necessary_book_router.callback_query(F.data.startswith("book:"))
 async def handle_next_books(callback: CallbackQuery):
-    ic()
     current_page: int = int(callback.data.split(':')[-1])
-    ic(current_page)
     await process_current_books_initial(callback, current_page=current_page)
 
 
 async def process_current_books_initial(callback: CallbackQuery, current_page=1):
     current_books = await cmc_client.get_current_books(skip=(current_page - 1) * 10 if current_page > 1 else 0)
-    ic(current_books)
     if current_books is None or 'necessary_books' not in current_books:
         await callback.message.edit_text(_("There are no books uploaded yet"), reply_markup=start_keyboard())
         return
@@ -33,8 +30,6 @@ async def process_current_books_initial(callback: CallbackQuery, current_page=1)
     total_books_count = current_books.get('total_books_count')
     total_pages_count = current_books.get('total_pages_count')
     current_page = current_books.get('current_page')
-    ic(current_page)
-    ic()
     reply_markup = go_back_keyboard()
     prev_page: int = current_page - 1
     next_page: int = current_page + 1
@@ -52,7 +47,6 @@ async def process_current_books_initial(callback: CallbackQuery, current_page=1)
 
 
 async def display_books(callback: CallbackQuery, current_books, reply_markup, total_books_count):
-    ic()
     pre_text: str = _("<em><b>{count} books in total.</b></em>").format(
         count=total_books_count
     )

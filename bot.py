@@ -6,7 +6,8 @@ from aiogram import Bot, Dispatcher
 from aiogram.client.default import DefaultBotProperties
 from aiogram.enums import ParseMode
 from aiogram.fsm.storage.memory import MemoryStorage
-from aiogram.utils.i18n import FSMI18nMiddleware
+from aiogram.utils import i18n
+from aiogram.utils.i18n import FSMI18nMiddleware, SimpleI18nMiddleware, I18nMiddleware
 
 from tgbot.config import load_config, Config
 from tgbot.handlers import routers_list
@@ -76,6 +77,11 @@ async def main():
     # await bot.close()
     dp = Dispatcher(storage=storage)
     dp.update.middleware(FSMI18nMiddleware(i18n=config.tg_bot.i18n))
+
+    # i18n_instance = I18nMiddleware(i18n=config.tg_bot.i18n)
+    # dp.update.middleware(I18nMiddleware(i18n=config.tg_bot.i18n))
+
+    # i18n_instance.setup(dp)
 
     dp.include_routers(*routers_list)
 

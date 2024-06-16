@@ -20,7 +20,6 @@ async def handle_hadith_action(callback: CallbackQuery):
     await process_subsequent_hadith(callback)
 
 
-# Helper Functions for Initial Hadith Processing
 async def process_initial_hadith(callback: CallbackQuery):
     try:
         user = await get_user_for_initial(callback)

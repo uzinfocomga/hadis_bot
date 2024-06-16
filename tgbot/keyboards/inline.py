@@ -39,7 +39,7 @@ def change_lang_keyboard():
     keyboard.row(
         InlineKeyboardButton(text="🇺🇿 UZ", callback_data="uz"),
         InlineKeyboardButton(text="🇷🇺 RU", callback_data="ru"),
-        InlineKeyboardButton(text="🇺🇸 US", callback_data="en"),
+        # InlineKeyboardButton(text="🇺🇸 US", callback_data="en"),
     )
     return keyboard.as_markup()
 
